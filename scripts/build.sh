@@ -3,7 +3,7 @@ set -eou pipefail
 cd $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 cd ../
 
-[[ -d deps ]] || clib i -c
+[[ -d deps ]] || clib i -c -q
 
 [[ -d bin ]] && rm -rf bin
 mkdir -p bin
