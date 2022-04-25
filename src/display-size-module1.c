@@ -1,6 +1,7 @@
 #include "../include/module-includes.h"
 #include "../src/display-size.c"
 
+
 enum darwin_display_size_logger_mode {
   LOGGER_NONE,
   LOGGER_INFO,
@@ -15,8 +16,8 @@ module(darwin_display_size) {
   enum darwin_display_size_logger_mode mode;
   uint32_t                             displays_count;
   struct DarwinDisplayResolution       *resolution;
-  double                                  width;
-  double                                  height;
+  double                               width;
+  double                               height;
   int                                  display_id;
 
   int                                  (*get_display_size)();
@@ -57,6 +58,10 @@ static inline int set_display_id(uint32_t id) {
 
 
 static inline int __get_display_size() {
+  if (require(darwin_display_size)->display_id < 0) {
+    return(-1);
+  }
+
   if (require(darwin_display_size)->mode >= LOGGER_DEBUG) {
     fprintf(stderr, "getting size of display #%d.....\n", require(darwin_display_size)->display_id);
   }
@@ -83,3 +88,4 @@ int darwin_display_size_init(module(darwin_display_size) *exports) {
   return(0);
 }
 
+typedef module(darwin_display_size) *DISPLAY_SIZE_MODULE;
