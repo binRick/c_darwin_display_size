@@ -7,10 +7,10 @@ int main(const int argc, const char **argv) {
   ds->set_display_id(0);
   ds->get_display_size();
   fprintf(stdout,
-          "%fx%f mm\n"
-          , ds->width
-          , ds->height
-  );
+          "%fx%f mm\n",
+          ds->width,
+          ds->height
+          );
   clib_module_free(ds);
   return(0);
 }
