@@ -1,0 +1,21 @@
+{
+  "name": "osx",
+  "version": "x",
+  "repo": "binRick/c_darwin_display_size",
+  "description": "C Darwin Display Size",
+  "keywords": [
+    "c",
+    "darwin"
+  ],
+  "license": "MIT",
+  "makefile": "Makefile",
+  "install": "make install",
+  "files": [],
+  "dependencies": {
+    "clibs/timestamp": "0.0.2",
+    "clibs/ms": "0.0.4",
+    "clibs/bytes": "0.0.4",
+    "clibs/list": "0.2.0",
+    "clibs/module": "0.1.1"
+  }
+}
