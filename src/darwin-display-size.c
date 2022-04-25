@@ -1,3 +1,4 @@
+#include "../include/types.h"
 #include "../src/display-size-module.c"
 
 
