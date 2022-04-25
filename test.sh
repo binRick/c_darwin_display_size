@@ -10,3 +10,6 @@ ansi --green --bg-black --italic "<test-display-size> $(./test-display-size)"
 
 o="$(echo "\n$(./test-display-module)")"
 ansi --cyan --bg-black --italic "<test-display-module> $o"
+
+o="$(echo "\n$(./display-size)")"
+ansi --red --bg-black --italic "<display-size> $o"

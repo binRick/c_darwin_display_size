@@ -11,3 +11,7 @@ gcc tests/test-display-size.c \
 gcc tests/test-display-size-module.c \
 	-framework ApplicationServices \
 	-o bin/test-display-module
+
+gcc tests/display-size.c \
+	-framework ApplicationServices \
+	-o bin/display-size

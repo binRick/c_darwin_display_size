@@ -1,3 +1,6 @@
+#ifndef DISPLAY_SIZE_MODULE_DEF
+#define DISPLAY_SIZE_MODULE_DEF
+
 #include "../include/module-includes.h"
 #include "../src/display-size.c"
 
@@ -75,7 +78,6 @@ static inline int __get_display_size() {
 int darwin_display_size_init(module(darwin_display_size) *exports) {
   clib_module_init(darwin_display_size, exports);
   if (exports->displays_count == -1) {
-    fprintf(stderr, "getting display count.....\n");
     exports->displays_count = get_display_count();
   }
   assert(exports->displays_count > 0);
@@ -89,3 +91,5 @@ int darwin_display_size_init(module(darwin_display_size) *exports) {
 }
 
 typedef module(darwin_display_size) *DISPLAY_SIZE_MODULE;
+
+#endif

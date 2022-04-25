@@ -1,32 +1,10 @@
 #include "../src/display-size-module.c"
-
-
-/***************************************/
-void DUMP_DISPLAY_SIZE_MODULE(int ID, DISPLAY_SIZE_MODULE ds){
-  fprintf(stdout,
-          "|Test #%d> "
-          "|# displays:%d|"
-          "|display_id:%d|"
-          "|logger mode:%d|"
-          "|width:%fmm|"
-          "|height:%fmm|"
-          "|\n",
-          ID,
-          ds->displays_count,
-          ds->display_id,
-          ds->mode,
-          ds->width,
-          ds->height
-          );
-}
-
-
-/***************************************/
+#include "../tests/utils.c"
 
 
 int test_module3(void) {
   module(darwin_display_size) * ds = require(darwin_display_size);
-  ds->mode                         = LOGGER_DEBUG;
+  ds->mode                         = LOGGER_NONE;
   ds->set_display_id(0);
   ds->get_display_size();
   DUMP_DISPLAY_SIZE_MODULE(3, ds);
