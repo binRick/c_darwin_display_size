@@ -2,13 +2,13 @@
 
 
 DarwinDisplaySize *get_darwin_display_size(uint32_t id){
-  DarwinDisplaySize *DDS = malloc(sizeof(struct DarwinDisplaySize));
+  DarwinDisplaySize   *DDS = malloc(sizeof(struct DarwinDisplaySize));
+  darwin_display_size *dds = init_darwin_display_size();
 
-  module(darwin_display_size) * ds = require(darwin_display_size);
-  ds->set_display_id(id);
-  ds->get_display_size();
-  DDS->width  = ds->width;
-  DDS->height = ds->height;
-  clib_module_free(ds);
+  dds->set_display_id(id);
+  dds->get_display_size();
+  DDS->width  = dds->width;
+  DDS->height = dds->height;
+  clib_module_free(dds);
   return(DDS);
 }
