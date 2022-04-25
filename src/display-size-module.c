@@ -68,8 +68,9 @@ static inline int __get_display_size() {
   if (require(darwin_display_size)->mode >= LOGGER_DEBUG) {
     fprintf(stderr, "getting size of display #%d.....\n", require(darwin_display_size)->display_id);
   }
-  uint32_t id = require(darwin_display_size)->display_id;
-  CGDirectDisplayID d = get_display_id(id);
+  uint32_t          id = require(darwin_display_size)->display_id;
+  CGDirectDisplayID d  = get_display_id(id);
+
   require(darwin_display_size)->resolution = get_display_resolution(d);
   require(darwin_display_size)->width      = require(darwin_display_size)->resolution->size.width;
   require(darwin_display_size)->height     = require(darwin_display_size)->resolution->size.height;
