@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eou pipefail
 
-#clib i
+[[ -d deps ]] || clib i -c
 
 [[ -d bin ]] && rm -rf bin
 mkdir -p bin
