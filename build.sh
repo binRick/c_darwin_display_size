@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -eou pipefail
 
+clib i
+
 [[ -d bin ]] && rm -rf bin
 mkdir -p bin
 
