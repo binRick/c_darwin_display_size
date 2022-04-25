@@ -1,12 +1,6 @@
 #include "../include/display-size.h"
 #include "../include/includes.h"
 
-struct DarwinDisplayResolution {
-  size_t x, y;
-  CGSize size;
-  int    pixels;
-};
-
 struct DarwinDisplayResolution * get_display_resolution(CGDirectDisplayID display_id){
   CGDisplayModeRef mode, current_mode; CFArrayRef mode_list;
 
