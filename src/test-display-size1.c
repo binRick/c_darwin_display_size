@@ -2,18 +2,8 @@
 
 
 int main(int argc, const char *argv[]){
-  uint32_t          displays_count;
-  CGDirectDisplayID display_id;
-  CGDisplayModeRef  display_mode = NULL;
-
-  CGDirectDisplayID displays[8];
-
-  CGGetActiveDisplayList(8, displays, &displays_count);
-  display_id = displays[0];
-
-  struct DarwinDisplayResolution *res = get_display_resolution(display_id);
-
-  CGDisplayModeRelease(display_mode);
+  CGDirectDisplayID              display_id = get_display_id();
+  struct DarwinDisplayResolution *res       = get_display_resolution(display_id);
 
   fprintf(stdout,
           "x:%zu|y:%zu|pixels:%d|width:%fmm|height:%fmm|\n",

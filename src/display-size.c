@@ -20,3 +20,26 @@ struct DarwinDisplayResolution * get_display_resolution(CGDirectDisplayID displa
   return(res);
 }
 
+
+uint32_t get_display_count(){
+  uint32_t          displays_count;
+  CGDirectDisplayID displays[8];
+
+  CGGetActiveDisplayList(8, displays, &displays_count);
+  return(displays_count);
+}
+
+
+CGDirectDisplayID get_display_id(){
+  uint32_t          displays_count;
+  CGDirectDisplayID display_id;
+  CGDisplayModeRef  display_mode = NULL;
+
+  CGDirectDisplayID displays[8];
+
+  CGGetActiveDisplayList(8, displays, &displays_count);
+  display_id = displays[0];
+  CGDisplayModeRelease(display_mode);
+  return(display_id);
+}
+
