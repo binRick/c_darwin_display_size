@@ -1,4 +1,4 @@
-#include "../src/display-size-module1.c"
+#include "../src/display-size-module.c"
 
 
 /***************************************/
