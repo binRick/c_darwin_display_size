@@ -2,14 +2,15 @@
 
 
 int main(const int argc, const char **argv) {
-  module(darwin_display_size) * ds = require(darwin_display_size);
-  ds->set_display_id(0);
-  ds->get_display_size();
+  darwin_display_size *dds = init_darwin_display_size();
+
+  dds->set_display_id(0);
+  dds->get_display_size();
   fprintf(stdout,
           "%fx%f mm\n",
-          ds->width,
-          ds->height
+          dds->width,
+          dds->height
           );
-  clib_module_free(ds);
+  clib_module_free(dds);
   return(0);
 }

@@ -93,7 +93,7 @@ int darwin_display_size_init(module(darwin_display_size) *exports) {
   return(0);
 }
 
-typedef module(darwin_display_size) *DISPLAY_SIZE_MODULE;
-
+typedef module(darwin_display_size) darwin_display_size;
+#define init_darwin_display_size()    { require(darwin_display_size) }
 
 #endif

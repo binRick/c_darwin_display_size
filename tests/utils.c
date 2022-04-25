@@ -2,7 +2,7 @@
 
 
 /***************************************/
-void DUMP_DISPLAY_SIZE_MODULE(int ID, DISPLAY_SIZE_MODULE ds){
+void DUMP_DISPLAY_SIZE_MODULE(int ID, darwin_display_size *dds){
   fprintf(stdout,
           "|Test #%d> "
           "|# displays:%d|"
@@ -12,10 +12,10 @@ void DUMP_DISPLAY_SIZE_MODULE(int ID, DISPLAY_SIZE_MODULE ds){
           "|height:%fmm|"
           "|\n",
           ID,
-          ds->displays_count,
-          ds->display_id,
-          ds->mode,
-          ds->width,
-          ds->height
+          dds->displays_count,
+          dds->display_id,
+          dds->mode,
+          dds->width,
+          dds->height
           );
 }

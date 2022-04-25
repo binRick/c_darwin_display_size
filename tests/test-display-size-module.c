@@ -3,12 +3,13 @@
 
 
 int test_module3(void) {
-  module(darwin_display_size) * ds = require(darwin_display_size);
-  ds->mode                         = LOGGER_NONE;
-  ds->set_display_id(0);
-  ds->get_display_size();
-  DUMP_DISPLAY_SIZE_MODULE(3, ds);
-  clib_module_free(ds);
+  darwin_display_size *dds = init_darwin_display_size();
+
+  dds->mode = LOGGER_NONE;
+  dds->set_display_id(0);
+  dds->get_display_size();
+  DUMP_DISPLAY_SIZE_MODULE(3, dds);
+  clib_module_free(dds);
   return(0);
 }
 
