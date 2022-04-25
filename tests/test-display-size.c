@@ -2,7 +2,7 @@
 
 
 int main(int argc, const char *argv[]){
-  CGDirectDisplayID              display_id = get_display_id();
+  CGDirectDisplayID              display_id = get_display_id(0);
   struct DarwinDisplayResolution *res       = get_display_resolution(display_id);
 
   fprintf(stdout,

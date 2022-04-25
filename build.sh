@@ -15,3 +15,7 @@ gcc tests/test-display-size-module.c \
 gcc tests/display-size.c \
 	-framework ApplicationServices \
 	-o bin/display-size
+
+gcc darwin-display-size.c \
+	-framework ApplicationServices \
+	-o bin/darwin-display-size

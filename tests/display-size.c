@@ -2,7 +2,7 @@
 
 
 int main(const int argc, const char **argv) {
-  module(darwin_display_size) *ds = require(darwin_display_size);
+  module(darwin_display_size) * ds = require(darwin_display_size);
   ds->set_display_id(0);
   ds->get_display_size();
   fprintf(stdout,

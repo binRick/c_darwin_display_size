@@ -30,7 +30,7 @@ uint32_t get_display_count(){
 }
 
 
-CGDirectDisplayID get_display_id(){
+CGDirectDisplayID get_display_id(uint32_t id){
   uint32_t          displays_count;
   CGDirectDisplayID display_id;
   CGDisplayModeRef  display_mode = NULL;
@@ -38,7 +38,7 @@ CGDirectDisplayID get_display_id(){
   CGDirectDisplayID displays[8];
 
   CGGetActiveDisplayList(8, displays, &displays_count);
-  display_id = displays[0];
+  display_id = displays[id];
   CGDisplayModeRelease(display_mode);
   return(display_id);
 }

@@ -8,4 +8,9 @@ struct DarwinDisplayResolution {
   int    pixels;
 };
 
+typedef struct DarwinDisplaySize DarwinDisplaySize;
+struct DarwinDisplaySize {
+  double width; double height;
+};
+
 #endif
