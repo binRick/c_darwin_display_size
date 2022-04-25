@@ -1,4 +1,4 @@
-#include "./src/darwin-display-size.c"
+#include "../src/darwin-display-size.c"
 
 #define DISPLAY_ID    0 // First Display
 

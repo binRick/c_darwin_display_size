@@ -12,3 +12,21 @@ DarwinDisplaySize *get_darwin_display_size(uint32_t id){
   clib_module_free(dds);
   return(DDS);
 }
+
+#ifdef DARWIN_DISPLAY_AUTO_INIT
+DarwinDisplaySize *dds;
+
+void __init__() __attribute__((constructor));
+
+void __attribute__((destructor)) __de_init__();
+
+
+void __init__() {
+  dds = get_darwin_display_size(DISPLAY_ID);
+}
+
+
+void __de_init__() {
+  free(dds);
+}
+#endif

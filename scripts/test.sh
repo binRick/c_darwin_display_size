@@ -1,7 +1,10 @@
 #!/bin/sh
 set -eou pipefail
+cd $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-./build.sh
+cd ../
+
+./scripts/build.sh
 clear
 
 cd bin
@@ -16,3 +19,6 @@ ansi --red --bg-black --italic "<display-size> $o"
 
 o="$(echo "\n$(./darwin-display-size)")"
 ansi --blue --underline --bold --bg-black "<darwin-display-size> $o"
+
+o="$(echo "\n$(./darwin-display-size-init)")"
+ansi --blue --underline --bold --bg-black "<darwin-display-size-init> $o"
